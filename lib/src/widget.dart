@@ -31,7 +31,7 @@ class EmptyListWidget extends StatefulWidget {
   EmptyListWidget(
       {this.title,
       this.subTitle,
-      this.image,
+      this.widget.image,
       this.subtitleTextStyle,
       this.titleTextStyle,
       this.packageImage});
@@ -137,7 +137,7 @@ class _EmptyListWidgetState extends State<EmptyListWidget>
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Image.asset(
-            _packageImage.encode(),
+            widget.packageImage == null ? widget.image : _packageImage.encode(),
             fit: BoxFit.contain,
             package: isPackageImage ? 'empty_widget' : null,
           ),
